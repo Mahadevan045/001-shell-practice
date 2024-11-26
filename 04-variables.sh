@@ -2,8 +2,8 @@
 
 #Variables define either we have to use dollar-variable-name and dollar-flower braces
 #Variables values taken from arguments through terminal
-Person1=Ramesh
-Person2=Suresh
+Person1=$1
+Person2=$2
 
 echo "$Person1:: Hi ${Person2} , How are you?"
 echo "${Person2}:: Hello $Person1 , I am fine , How are you doing"
