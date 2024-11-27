@@ -30,5 +30,13 @@ CHECK_ROOT
 #sh 15-loops.sh git postfix mysql nginx
 for package in $@ # refers to pass all arguments
 do
-    echo  $package
+    echo  dnf list installed $package
+    if [ $? -ne 0 ]
+    then 
+        echo "$package is not installed , going to install it"
+        dnf install $package -y
+        VALIDATE $? "Installing $package"
+    else
+        echo "$package is already is installed,nothing to do.."
+    fi
 done 
