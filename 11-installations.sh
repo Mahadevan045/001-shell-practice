@@ -9,4 +9,4 @@ then
     echo "Please run this script with root previliges"
 fi
 
-dnf list installed git
+dnf install git -y
