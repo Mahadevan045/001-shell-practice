@@ -9,4 +9,12 @@ then
     echo "Please run this script with root previliges"
 fi
 
-dnf install git -y
+dnf list installed git
+
+if [ $? -ne 0 ]
+then 
+    echo "Git is not installed , going to install it"
+    dnf install git -y
+else
+    echo "Git is already is installed,nothing to do.."
+fi
