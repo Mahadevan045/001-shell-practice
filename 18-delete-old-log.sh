@@ -19,5 +19,6 @@ echo "Files are :$FILES"
 
 while IFS= read -r line #IFS ,internal field separator,empty it will ignore white spaces,-r is for not to ignore special character like /
 do 
+    rm -rf $line
     echo "Deleting line :$line"
 done <<< $FILES
