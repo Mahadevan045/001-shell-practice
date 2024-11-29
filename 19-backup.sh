@@ -34,7 +34,7 @@ FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14)
 
 echo "Files :: $FILES"
 
-if [ ! -z $FILES ] #true if FILES is empty
+if [ ! -z $FILES ] #true if FILES is empty,! makes it false
 then 
     echo "files are found"
 else
