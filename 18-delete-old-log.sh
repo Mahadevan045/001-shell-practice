@@ -17,8 +17,9 @@ fi
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14)
 echo "Files are :$FILES"
 
-while IFS= read -r line #IFS ,internal field separator,empty it will ignore white spaces,-r is for not to ignore special character like /
+# Don't use line ,it is reserved word
+while IFS= read -r file #IFS ,internal field separator,empty it will ignore white spaces,-r is for not to ignore special character like /
 do 
-    rm -rf $line
-    echo "Deleting line :$line"
+    rm -rf $file
+    echo "Deleting file :$file"
 done <<< $FILES
